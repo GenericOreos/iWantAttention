@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">iWantAttention</string>
     <string name="welcome_to_the_i_want_attention_app">Welcome to the I Want Attention App</string>
+    <string name="i_want_attention">I Want Attention</string>
+    <string name="bring_me_snacks">Bring Me Snacks</string>
+    <string name="i_m_thirsty">I\'m Thirsty</string>
+    <string name="i_want_snuggles">I Want Snuggles</string>
+    <string name="bring_me_terry">Bring Me Terry</string>
+    <string name="bring_me_princess">Bring Me Princess</string>
+    <string name="version_1_0">Version 1.0</string>
+    <string name="send">Send</string>
 </resources>
