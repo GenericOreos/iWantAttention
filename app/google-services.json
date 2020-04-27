@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "905627734117",
+    "firebase_url": "https://iwantattention-4bc78.firebaseio.com",
+    "project_id": "iwantattention-4bc78",
+    "storage_bucket": "iwantattention-4bc78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905627734117:android:e4e4371f443a81aa5a768c",
+        "android_client_info": {
+          "package_name": "com.example.iwantattention"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905627734117-r0k2uc5e4h2ga4dn9err8b08md6qui6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPeEh01wQ7d0y_y--w_SHEtB-3x6cJO6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905627734117-r0k2uc5e4h2ga4dn9err8b08md6qui6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
