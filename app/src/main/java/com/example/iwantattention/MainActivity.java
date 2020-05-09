@@ -2,7 +2,9 @@ package com.example.iwantattention;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -108,13 +110,36 @@ public class MainActivity extends AppCompatActivity {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String msg = message[0];
                 ShowNotification("Message sent to Adam: " + "'" + msg + "'");
+            }
+        });
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String msg = message[0];
+                SendMessage(msg);
             }
         });
     }
     public void ShowNotification(String message) {
         Snackbar display = Snackbar.make(findViewById(R.id.btnSend), message, Snackbar.LENGTH_LONG);
         display.show();
+    }
+    public void SendMessage(String message){
+        String[] TO = {"adambrewer88@gmail.com"};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("message/rfc822");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, message);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Sent from the iWantAttention app");
+        try {
+            startActivity(Intent.createChooser(emailIntent,"Send the message via email"));
+            finish();
+        } catch (android.content.ActivityNotFoundException ex) {
+            ShowNotification("There is no email client installed on this device");
+        }
     }
 }
