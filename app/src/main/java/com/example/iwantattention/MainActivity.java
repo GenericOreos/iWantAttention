@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import com.google.android.material.snackbar.Snackbar;
 import android.telephony.SmsManager;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RequestPermission();
+        final EditText textCustomRequest = findViewById(R.id.txtCustomRequest);
+        disableEditText(textCustomRequest);
         final Button btnAttention = findViewById(R.id.btnAttention);
         btnAttention.setBackgroundColor(Color.MAGENTA);
         final Button btnSnuggles = findViewById(R.id.btnSnuggles);
@@ -35,7 +38,11 @@ public class MainActivity extends AppCompatActivity {
         btnTerry.setBackgroundColor(Color.MAGENTA);
         final Button btnPrincess = findViewById(R.id.btnPrincess);
         btnPrincess.setBackgroundColor(Color.MAGENTA);
-        Button btnSend = findViewById(R.id.btnSend);
+        final Button btnTuck = findViewById(R.id.btnTuck);
+        btnTuck.setBackgroundColor(Color.MAGENTA);
+        final Button btnCustom = findViewById(R.id.btnCustom);
+        btnCustom.setBackgroundColor(Color.MAGENTA);
+        final Button btnSend = findViewById(R.id.btnSend);
         btnSend.setBackgroundColor(Color.MAGENTA);
         //string "message" will be the selected button as a string and will be sent in a message
         //starts blank, and once a button is pushed, the message will be updated
@@ -51,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 btnDrinks.setBackgroundColor(Color.MAGENTA);
                 btnTerry.setBackgroundColor(Color.MAGENTA);
                 btnPrincess.setBackgroundColor(Color.MAGENTA);
+                btnTuck.setBackgroundColor(Color.MAGENTA);
+                btnCustom.setBackgroundColor(Color.MAGENTA);
                 message[0] = "I want attention";
             }
         });
@@ -63,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
                 btnDrinks.setBackgroundColor(Color.MAGENTA);
                 btnTerry.setBackgroundColor(Color.MAGENTA);
                 btnPrincess.setBackgroundColor(Color.MAGENTA);
+                btnTuck.setBackgroundColor(Color.MAGENTA);
+                btnCustom.setBackgroundColor(Color.MAGENTA);
                 message[0] = "I want snuggles";
             }
         });
@@ -70,11 +81,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnSnacks.setBackgroundColor(Color.YELLOW);
-                btnSnuggles.setBackgroundColor(Color.MAGENTA);
                 btnAttention.setBackgroundColor(Color.MAGENTA);
+                btnSnuggles.setBackgroundColor(Color.MAGENTA);
                 btnDrinks.setBackgroundColor(Color.MAGENTA);
                 btnTerry.setBackgroundColor(Color.MAGENTA);
                 btnPrincess.setBackgroundColor(Color.MAGENTA);
+                btnTuck.setBackgroundColor(Color.MAGENTA);
+                btnCustom.setBackgroundColor(Color.MAGENTA);
                 message[0] = "I want snacks";
             }
         });
@@ -82,11 +95,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnDrinks.setBackgroundColor(Color.YELLOW);
-                btnSnacks.setBackgroundColor(Color.MAGENTA);
-                btnSnuggles.setBackgroundColor(Color.MAGENTA);
                 btnAttention.setBackgroundColor(Color.MAGENTA);
+                btnSnuggles.setBackgroundColor(Color.MAGENTA);
+                btnSnacks.setBackgroundColor(Color.MAGENTA);
                 btnTerry.setBackgroundColor(Color.MAGENTA);
                 btnPrincess.setBackgroundColor(Color.MAGENTA);
+                btnTuck.setBackgroundColor(Color.MAGENTA);
+                btnCustom.setBackgroundColor(Color.MAGENTA);
                 message[0] = "I want a drink";
             }
         });
@@ -94,11 +109,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnTerry.setBackgroundColor(Color.YELLOW);
-                btnDrinks.setBackgroundColor(Color.MAGENTA);
-                btnSnacks.setBackgroundColor(Color.MAGENTA);
-                btnSnuggles.setBackgroundColor(Color.MAGENTA);
                 btnAttention.setBackgroundColor(Color.MAGENTA);
+                btnSnuggles.setBackgroundColor(Color.MAGENTA);
+                btnSnacks.setBackgroundColor(Color.MAGENTA);
+                btnDrinks.setBackgroundColor(Color.MAGENTA);
                 btnPrincess.setBackgroundColor(Color.MAGENTA);
+                btnTuck.setBackgroundColor(Color.MAGENTA);
+                btnCustom.setBackgroundColor(Color.MAGENTA);
                 message[0] = "I want Terry";
             }
         });
@@ -106,22 +123,53 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btnPrincess.setBackgroundColor(Color.YELLOW);
-                btnDrinks.setBackgroundColor(Color.MAGENTA);
-                btnSnacks.setBackgroundColor(Color.MAGENTA);
-                btnSnuggles.setBackgroundColor(Color.MAGENTA);
                 btnAttention.setBackgroundColor(Color.MAGENTA);
+                btnSnuggles.setBackgroundColor(Color.MAGENTA);
+                btnSnacks.setBackgroundColor(Color.MAGENTA);
+                btnDrinks.setBackgroundColor(Color.MAGENTA);
                 btnTerry.setBackgroundColor(Color.MAGENTA);
+                btnTuck.setBackgroundColor(Color.MAGENTA);
+                btnCustom.setBackgroundColor(Color.MAGENTA);
                 message[0] = "I want Princess";
             }
         });
-        btnSend.setOnClickListener(new View.OnClickListener() {
+        btnTuck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnTuck.setBackgroundColor(Color.YELLOW);
+                btnAttention.setBackgroundColor(Color.MAGENTA);
+                btnSnuggles.setBackgroundColor(Color.MAGENTA);
+                btnSnacks.setBackgroundColor(Color.MAGENTA);
+                btnDrinks.setBackgroundColor(Color.MAGENTA);
+                btnTerry.setBackgroundColor(Color.MAGENTA);
+                btnPrincess.setBackgroundColor(Color.MAGENTA);
+                btnCustom.setBackgroundColor(Color.MAGENTA);
+                message[0] = "Tuck In";
+            }
+        });
+        btnCustom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnCustom.setBackgroundColor(Color.YELLOW);
+                btnAttention.setBackgroundColor(Color.MAGENTA);
+                btnSnuggles.setBackgroundColor(Color.MAGENTA);
+                btnSnacks.setBackgroundColor(Color.MAGENTA);
+                btnDrinks.setBackgroundColor(Color.MAGENTA);
+                btnTerry.setBackgroundColor(Color.MAGENTA);
+                btnPrincess.setBackgroundColor(Color.MAGENTA);
+                btnTuck.setBackgroundColor(Color.MAGENTA);
+                enableEditText(textCustomRequest);
+                String customRequest = textCustomRequest.getText().toString();
+                message[0] = customRequest;
+            }
+        });
+        /*btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String msg = message[0];
                 ShowNotification("Message sent to Adam: " + "'" + msg + "'");
             }
-        });
+        });*/
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -168,6 +216,17 @@ public class MainActivity extends AppCompatActivity {
     public void ShowNotification(String message) {
         Snackbar display = Snackbar.make(findViewById(R.id.btnSend), message, Snackbar.LENGTH_LONG);
         display.show();
+    }
+    public void disableEditText(EditText et){
+        et.setFocusable(false);
+        et.setEnabled(false);
+        et.setBackgroundColor(Color.TRANSPARENT);
+    }
+    public void enableEditText(EditText et){
+        et.setBackgroundColor(Color.YELLOW);
+        et.setFocusableInTouchMode(true);
+        et.setEnabled(true);
+        et.requestFocus();
     }
     public void SendMessage(String message){
         //code to send over email - using SMS instead
