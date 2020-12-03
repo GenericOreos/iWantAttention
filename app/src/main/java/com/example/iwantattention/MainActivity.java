@@ -159,21 +159,17 @@ public class MainActivity extends AppCompatActivity {
                 btnPrincess.setBackgroundColor(Color.MAGENTA);
                 btnTuck.setBackgroundColor(Color.MAGENTA);
                 enableEditText(textCustomRequest);
-                String customRequest = textCustomRequest.getText().toString();
-                message[0] = customRequest;
             }
         });
-        /*btnSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String msg = message[0];
-                ShowNotification("Message sent to Adam: " + "'" + msg + "'");
-            }
-        });*/
+
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String customRequest = textCustomRequest.getText().toString();
                 String msg = message[0];
+                if(msg == ""){
+                    msg = customRequest;
+                }
                 SendMessage(msg);
                 ShowNotification("Message sent!");
             }
