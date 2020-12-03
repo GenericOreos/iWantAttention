@@ -159,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 btnPrincess.setBackgroundColor(Color.MAGENTA);
                 btnTuck.setBackgroundColor(Color.MAGENTA);
                 enableEditText(textCustomRequest);
+                message[0] = "";
             }
         });
 
