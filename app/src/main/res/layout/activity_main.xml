@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnSnacks"
+        android:id="@+id/btnThree"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginStart="53dp"
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnTerry"
+        android:id="@+id/btnFive"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginStart="53dp"
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnPrincess"
+        android:id="@+id/btnSix"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginStart="218dp"
@@ -71,7 +71,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnDrink"
+        android:id="@+id/btnFour"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginStart="218dp"
@@ -87,7 +87,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnAttention"
+        android:id="@+id/btnOne"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginStart="53dp"
@@ -103,7 +103,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnSnuggles"
+        android:id="@+id/btnTwo"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginStart="218dp"
@@ -135,7 +135,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnTuck"
+        android:id="@+id/btnSeven"
         android:layout_width="145dp"
         android:layout_height="72dp"
         android:layout_marginStart="53dp"
