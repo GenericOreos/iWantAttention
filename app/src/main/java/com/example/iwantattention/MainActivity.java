@@ -3,7 +3,7 @@ package com.example.iwantattention;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat; 
+import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
@@ -38,8 +38,7 @@ public class MainActivity extends AppCompatActivity {
         //starts blank, and once a button is pushed, the message will be updated
         final String[] message = {""};
         final Button[] buttons = {btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnCustom, btnSend};
-        for (Button btn: buttons
-             ) {
+        for (Button btn: buttons) {
             btn.setBackgroundColor(Color.MAGENTA);
         }
         //when a button is pressed, it changes colour to yellow,
@@ -52,6 +51,16 @@ public class MainActivity extends AppCompatActivity {
                 disableEditText(textCustomRequest);
             }
         });
+        btnOne.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                btnActivate(btnOne, buttons);
+                enableEditText(textCustomRequest);
+                ButtonTextChange(btnOne, textCustomRequest);
+                return true;
+            }
+        });
+
         btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,6 +142,17 @@ public class MainActivity extends AppCompatActivity {
                 }
         }
         return buttons;
+    }
+
+    private void ButtonTextChange(final Button button, final EditText editText){
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if(!hasFocus){
+                    button.setText(editText.getText().toString());
+                }
+            }
+        });
     }
 
     private void RequestPermission() {
