@@ -3,8 +3,7 @@ package com.example.iwantattention;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
+import androidx.core.content.ContextCompat; 
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
@@ -27,137 +26,84 @@ public class MainActivity extends AppCompatActivity {
         final EditText textCustomRequest = findViewById(R.id.txtCustomRequest);
         disableEditText(textCustomRequest);
         final Button btnOne = findViewById(R.id.btnOne);
-        btnOne.setBackgroundColor(Color.MAGENTA);
         final Button btnTwo = findViewById(R.id.btnTwo);
-        btnTwo.setBackgroundColor(Color.MAGENTA);
         final Button btnThree = findViewById(R.id.btnThree);
-        btnThree.setBackgroundColor(Color.MAGENTA);
         final Button btnFour = findViewById(R.id.btnFour);
-        btnFour.setBackgroundColor(Color.MAGENTA);
         final Button btnFive = findViewById(R.id.btnFive);
-        btnFive.setBackgroundColor(Color.MAGENTA);
         final Button btnSix = findViewById(R.id.btnSix);
-        btnSix.setBackgroundColor(Color.MAGENTA);
         final Button btnSeven = findViewById(R.id.btnSeven);
-        btnSeven.setBackgroundColor(Color.MAGENTA);
         final Button btnCustom = findViewById(R.id.btnCustom);
-        btnCustom.setBackgroundColor(Color.MAGENTA);
         final Button btnSend = findViewById(R.id.btnSend);
-        btnSend.setBackgroundColor(Color.MAGENTA);
         //string "message" will be the selected button as a string and will be sent in a message
         //starts blank, and once a button is pushed, the message will be updated
         final String[] message = {""};
+        final Button[] buttons = {btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnCustom, btnSend};
+        for (Button btn: buttons
+             ) {
+            btn.setBackgroundColor(Color.MAGENTA);
+        }
         //when a button is pressed, it changes colour to yellow,
         //and the message string matches the button text
         btnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnOne.setBackgroundColor(Color.YELLOW);
-                btnTwo.setBackgroundColor(Color.MAGENTA);
-                btnThree.setBackgroundColor(Color.MAGENTA);
-                btnFour.setBackgroundColor(Color.MAGENTA);
-                btnFive.setBackgroundColor(Color.MAGENTA);
-                btnSix.setBackgroundColor(Color.MAGENTA);
-                btnSeven.setBackgroundColor(Color.MAGENTA);
-                btnCustom.setBackgroundColor(Color.MAGENTA);
+                btnActivate(btnOne, buttons);
                 message[0] = btnOne.getText().toString();
+                disableEditText(textCustomRequest);
             }
         });
         btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnTwo.setBackgroundColor(Color.YELLOW);
-                btnOne.setBackgroundColor(Color.MAGENTA);
-                btnThree.setBackgroundColor(Color.MAGENTA);
-                btnFour.setBackgroundColor(Color.MAGENTA);
-                btnFive.setBackgroundColor(Color.MAGENTA);
-                btnSix.setBackgroundColor(Color.MAGENTA);
-                btnSeven.setBackgroundColor(Color.MAGENTA);
-                btnCustom.setBackgroundColor(Color.MAGENTA);
+                btnActivate(btnTwo, buttons);
                 message[0] = btnTwo.getText().toString();
+                disableEditText(textCustomRequest);
             }
         });
         btnThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnThree.setBackgroundColor(Color.YELLOW);
-                btnOne.setBackgroundColor(Color.MAGENTA);
-                btnTwo.setBackgroundColor(Color.MAGENTA);
-                btnFour.setBackgroundColor(Color.MAGENTA);
-                btnFive.setBackgroundColor(Color.MAGENTA);
-                btnSix.setBackgroundColor(Color.MAGENTA);
-                btnSeven.setBackgroundColor(Color.MAGENTA);
-                btnCustom.setBackgroundColor(Color.MAGENTA);
+                btnActivate(btnThree, buttons);
                 message[0] = btnThree.getText().toString();
+                disableEditText(textCustomRequest);
             }
         });
         btnFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnFour.setBackgroundColor(Color.YELLOW);
-                btnOne.setBackgroundColor(Color.MAGENTA);
-                btnTwo.setBackgroundColor(Color.MAGENTA);
-                btnThree.setBackgroundColor(Color.MAGENTA);
-                btnFive.setBackgroundColor(Color.MAGENTA);
-                btnSix.setBackgroundColor(Color.MAGENTA);
-                btnSeven.setBackgroundColor(Color.MAGENTA);
-                btnCustom.setBackgroundColor(Color.MAGENTA);
+                btnActivate(btnFour, buttons);
                 message[0] = btnFour.getText().toString();
+                disableEditText(textCustomRequest);
             }
         });
         btnFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnFive.setBackgroundColor(Color.YELLOW);
-                btnOne.setBackgroundColor(Color.MAGENTA);
-                btnTwo.setBackgroundColor(Color.MAGENTA);
-                btnThree.setBackgroundColor(Color.MAGENTA);
-                btnFour.setBackgroundColor(Color.MAGENTA);
-                btnSix.setBackgroundColor(Color.MAGENTA);
-                btnSeven.setBackgroundColor(Color.MAGENTA);
-                btnCustom.setBackgroundColor(Color.MAGENTA);
+                btnActivate(btnFive, buttons);
                 message[0] = btnFive.getText().toString();
+                disableEditText(textCustomRequest);
             }
         });
         btnSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnSix.setBackgroundColor(Color.YELLOW);
-                btnOne.setBackgroundColor(Color.MAGENTA);
-                btnTwo.setBackgroundColor(Color.MAGENTA);
-                btnThree.setBackgroundColor(Color.MAGENTA);
-                btnFour.setBackgroundColor(Color.MAGENTA);
-                btnFive.setBackgroundColor(Color.MAGENTA);
-                btnSeven.setBackgroundColor(Color.MAGENTA);
-                btnCustom.setBackgroundColor(Color.MAGENTA);
+                btnActivate(btnSix, buttons);
                 message[0] = btnSix.getText().toString();
+                disableEditText(textCustomRequest);
             }
         });
         btnSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnSeven.setBackgroundColor(Color.YELLOW);
-                btnOne.setBackgroundColor(Color.MAGENTA);
-                btnTwo.setBackgroundColor(Color.MAGENTA);
-                btnThree.setBackgroundColor(Color.MAGENTA);
-                btnFour.setBackgroundColor(Color.MAGENTA);
-                btnFive.setBackgroundColor(Color.MAGENTA);
-                btnSix.setBackgroundColor(Color.MAGENTA);
-                btnCustom.setBackgroundColor(Color.MAGENTA);
+                btnActivate(btnSeven, buttons);
                 message[0] = btnSeven.getText().toString();
+                disableEditText(textCustomRequest);
             }
         });
         btnCustom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnCustom.setBackgroundColor(Color.YELLOW);
-                btnOne.setBackgroundColor(Color.MAGENTA);
-                btnTwo.setBackgroundColor(Color.MAGENTA);
-                btnThree.setBackgroundColor(Color.MAGENTA);
-                btnFour.setBackgroundColor(Color.MAGENTA);
-                btnFive.setBackgroundColor(Color.MAGENTA);
-                btnSix.setBackgroundColor(Color.MAGENTA);
-                btnSeven.setBackgroundColor(Color.MAGENTA);
+                btnActivate(btnCustom, buttons);
                 enableEditText(textCustomRequest);
                 message[0] = "";
             }
@@ -175,6 +121,18 @@ public class MainActivity extends AppCompatActivity {
                 ShowNotification("Message sent!");
             }
         });
+    }
+
+    private Button[] btnActivate(Button btn, Button[] buttons) {
+        for (Button button: buttons
+             ) {
+                if (button == btn) {
+                    button.setBackgroundColor(Color.YELLOW);
+                } else {
+                    button.setBackgroundColor(Color.MAGENTA);
+                }
+        }
+        return buttons;
     }
 
     private void RequestPermission() {
@@ -217,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
     public void disableEditText(EditText et){
         et.setFocusable(false);
         et.setEnabled(false);
+        et.setText("");
         et.setBackgroundColor(Color.TRANSPARENT);
     }
     public void enableEditText(EditText et){
