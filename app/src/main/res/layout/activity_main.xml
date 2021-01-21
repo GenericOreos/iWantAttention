@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#EDD4F1">
 
     <TextView
+        android:textStyle="bold"
         android:id="@+id/txtWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,6 +25,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="#FFFFFF"
+        android:background="#C534DC"
         android:id="@+id/btnThree"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -39,6 +43,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="#FFFFFF"
+        android:background="#C534DC"
         android:id="@+id/btnFive"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -55,6 +61,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="#FFFFFF"
+        android:background="#C534DC"
         android:id="@+id/btnSix"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -71,6 +79,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="#FFFFFF"
+        android:background="#C534DC"
         android:id="@+id/btnFour"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -87,6 +97,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="#FFFFFF"
+        android:background="#C534DC"
         android:id="@+id/btnOne"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -103,6 +115,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="#FFFFFF"
+        android:background="#C534DC"
         android:id="@+id/btnTwo"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -119,6 +133,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="#FFFFFF"
+        android:background="#C534DC"
         android:id="@+id/btnSend"
         android:layout_width="316dp"
         android:layout_height="74dp"
@@ -135,6 +151,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="#FFFFFF"
+        android:background="#C534DC"
         android:id="@+id/btnSeven"
         android:layout_width="145dp"
         android:layout_height="72dp"
@@ -151,6 +169,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="#FFFFFF"
+        android:background="#C534DC"
         android:id="@+id/btnEight"
         android:layout_width="145dp"
         android:layout_height="72dp"
@@ -167,6 +187,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:textColor="#FFFFFF"
+        android:background="#C534DC"
         android:windowSoftInputMode="stateVisible"
         android:id="@+id/txtCustomRequest"
         android:layout_width="284dp"

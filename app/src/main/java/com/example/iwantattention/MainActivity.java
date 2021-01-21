@@ -39,15 +39,12 @@ public class MainActivity extends AppCompatActivity {
         //starts blank, and once a button is pushed, the message will be updated
         final String[] message = {""};
         final Button[] buttons = {btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnSend};
-        for (Button btn: buttons) {
-            btn.setBackgroundColor(Color.MAGENTA);
-        }
+
         //when a button is pressed, it changes colour to yellow,
         //and the message string matches the button text
         btnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnActivate(btnOne, buttons);
                 message[0] = btnOne.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -55,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         btnOne.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                btnActivate(btnOne, buttons);
                 enableEditText(textCustomRequest);
                 ButtonTextChange(btnOne, textCustomRequest);
                 getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
@@ -65,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnActivate(btnTwo, buttons);
                 message[0] = btnTwo.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -73,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         btnTwo.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                btnActivate(btnTwo, buttons);
                 enableEditText(textCustomRequest);
                 ButtonTextChange(btnTwo, textCustomRequest);
                 return true;
@@ -82,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         btnThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnActivate(btnThree, buttons);
                 message[0] = btnThree.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -90,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
         btnThree.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                btnActivate(btnThree, buttons);
                 enableEditText(textCustomRequest);
                 ButtonTextChange(btnThree, textCustomRequest);
                 return true;
@@ -99,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
         btnFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnActivate(btnFour, buttons);
                 message[0] = btnFour.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -107,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
         btnFour.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                btnActivate(btnFour, buttons);
                 enableEditText(textCustomRequest);
                 ButtonTextChange(btnFour, textCustomRequest);
                 return true;
@@ -116,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
         btnFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnActivate(btnFive, buttons);
                 message[0] = btnFive.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -124,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
         btnFive.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                btnActivate(btnFive, buttons);
                 enableEditText(textCustomRequest);
                 ButtonTextChange(btnFive, textCustomRequest);
                 return true;
@@ -133,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
         btnSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnActivate(btnSix, buttons);
                 message[0] = btnSix.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -141,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
         btnSix.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                btnActivate(btnSix, buttons);
                 enableEditText(textCustomRequest);
                 ButtonTextChange(btnSix, textCustomRequest);
                 return true;
@@ -150,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
         btnSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnActivate(btnSeven, buttons);
                 message[0] = btnSeven.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -158,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
         btnSeven.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                btnActivate(btnSeven, buttons);
                 enableEditText(textCustomRequest);
                 ButtonTextChange(btnSeven, textCustomRequest);
                 return true;
@@ -167,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
         btnEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnActivate(btnEight, buttons);
                 message[0] = btnEight.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -175,7 +158,6 @@ public class MainActivity extends AppCompatActivity {
         btnEight.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                btnActivate(btnEight, buttons);
                 enableEditText(textCustomRequest);
                 ButtonTextChange(btnEight, textCustomRequest);
                 return true;
@@ -196,17 +178,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private Button[] btnActivate(Button btn, Button[] buttons) {
-        for (Button button: buttons
-             ) {
-                if (button == btn) {
-                    button.setBackgroundColor(Color.YELLOW);
-                } else {
-                    button.setBackgroundColor(Color.MAGENTA);
-                }
-        }
-        return buttons;
-    }
 
     private void ButtonTextChange(final Button button, final EditText editText){
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -263,7 +234,6 @@ public class MainActivity extends AppCompatActivity {
         et.setBackgroundColor(Color.TRANSPARENT);
     }
     public void enableEditText(EditText et){
-        et.setBackgroundColor(Color.YELLOW);
         et.setFocusableInTouchMode(true);
         et.setEnabled(true);
         et.requestFocus();
