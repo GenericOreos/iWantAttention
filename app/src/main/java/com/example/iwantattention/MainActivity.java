@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import com.google.android.material.snackbar.Snackbar;
 import android.telephony.SmsManager;
@@ -32,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
         final Button btnFive = findViewById(R.id.btnFive);
         final Button btnSix = findViewById(R.id.btnSix);
         final Button btnSeven = findViewById(R.id.btnSeven);
-        final Button btnCustom = findViewById(R.id.btnCustom);
+        final Button btnEight = findViewById(R.id.btnEight);
         final Button btnSend = findViewById(R.id.btnSend);
         //string "message" will be the selected button as a string and will be sent in a message
         //starts blank, and once a button is pushed, the message will be updated
         final String[] message = {""};
-        final Button[] buttons = {btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnCustom, btnSend};
+        final Button[] buttons = {btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnSend};
         for (Button btn: buttons) {
             btn.setBackgroundColor(Color.MAGENTA);
         }
@@ -57,16 +58,25 @@ public class MainActivity extends AppCompatActivity {
                 btnActivate(btnOne, buttons);
                 enableEditText(textCustomRequest);
                 ButtonTextChange(btnOne, textCustomRequest);
+                getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
                 return true;
             }
         });
-
         btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 btnActivate(btnTwo, buttons);
                 message[0] = btnTwo.getText().toString();
                 disableEditText(textCustomRequest);
+            }
+        });
+        btnTwo.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                btnActivate(btnTwo, buttons);
+                enableEditText(textCustomRequest);
+                ButtonTextChange(btnTwo, textCustomRequest);
+                return true;
             }
         });
         btnThree.setOnClickListener(new View.OnClickListener() {
@@ -77,12 +87,30 @@ public class MainActivity extends AppCompatActivity {
                 disableEditText(textCustomRequest);
             }
         });
+        btnThree.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                btnActivate(btnThree, buttons);
+                enableEditText(textCustomRequest);
+                ButtonTextChange(btnThree, textCustomRequest);
+                return true;
+            }
+        });
         btnFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 btnActivate(btnFour, buttons);
                 message[0] = btnFour.getText().toString();
                 disableEditText(textCustomRequest);
+            }
+        });
+        btnFour.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                btnActivate(btnFour, buttons);
+                enableEditText(textCustomRequest);
+                ButtonTextChange(btnFour, textCustomRequest);
+                return true;
             }
         });
         btnFive.setOnClickListener(new View.OnClickListener() {
@@ -93,12 +121,30 @@ public class MainActivity extends AppCompatActivity {
                 disableEditText(textCustomRequest);
             }
         });
+        btnFive.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                btnActivate(btnFive, buttons);
+                enableEditText(textCustomRequest);
+                ButtonTextChange(btnFive, textCustomRequest);
+                return true;
+            }
+        });
         btnSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 btnActivate(btnSix, buttons);
                 message[0] = btnSix.getText().toString();
                 disableEditText(textCustomRequest);
+            }
+        });
+        btnSix.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                btnActivate(btnSix, buttons);
+                enableEditText(textCustomRequest);
+                ButtonTextChange(btnSix, textCustomRequest);
+                return true;
             }
         });
         btnSeven.setOnClickListener(new View.OnClickListener() {
@@ -109,12 +155,30 @@ public class MainActivity extends AppCompatActivity {
                 disableEditText(textCustomRequest);
             }
         });
-        btnCustom.setOnClickListener(new View.OnClickListener() {
+        btnSeven.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                btnActivate(btnSeven, buttons);
+                enableEditText(textCustomRequest);
+                ButtonTextChange(btnSeven, textCustomRequest);
+                return true;
+            }
+        });
+        btnEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnActivate(btnCustom, buttons);
+                btnActivate(btnEight, buttons);
+                message[0] = btnEight.getText().toString();
+                disableEditText(textCustomRequest);
+            }
+        });
+        btnEight.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                btnActivate(btnEight, buttons);
                 enableEditText(textCustomRequest);
-                message[0] = "";
+                ButtonTextChange(btnEight, textCustomRequest);
+                return true;
             }
         });
 

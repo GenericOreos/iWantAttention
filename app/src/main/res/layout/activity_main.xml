@@ -151,7 +151,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnCustom"
+        android:id="@+id/btnEight"
         android:layout_width="145dp"
         android:layout_height="72dp"
         android:layout_marginStart="218dp"
@@ -167,6 +167,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:windowSoftInputMode="stateVisible"
         android:id="@+id/txtCustomRequest"
         android:layout_width="284dp"
         android:layout_height="47dp"
