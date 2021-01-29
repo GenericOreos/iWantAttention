@@ -25,8 +25,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="#FFFFFF"
         android:background="#C534DC"
+        android:textColor="#FFFFFF"
         android:id="@+id/btnThree"
         android:layout_width="150dp"
         android:layout_height="75dp"

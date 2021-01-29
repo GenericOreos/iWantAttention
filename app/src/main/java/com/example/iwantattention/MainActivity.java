@@ -35,16 +35,20 @@ public class MainActivity extends AppCompatActivity {
         final Button btnSeven = findViewById(R.id.btnSeven);
         final Button btnEight = findViewById(R.id.btnEight);
         final Button btnSend = findViewById(R.id.btnSend);
+        btnSend.setBackgroundColor(Color.MAGENTA);
         //string "message" will be the selected button as a string and will be sent in a message
         //starts blank, and once a button is pushed, the message will be updated
         final String[] message = {""};
-        final Button[] buttons = {btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnSend};
-
+        final Button[] buttons = {btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight};
+        for (Button btn: buttons) {
+            btn.setBackgroundColor(Color.MAGENTA);
+        }
         //when a button is pressed, it changes colour to yellow,
         //and the message string matches the button text
         btnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ButtonPress(btnOne, buttons);
                 message[0] = btnOne.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -61,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ButtonPress(btnTwo, buttons);
                 message[0] = btnTwo.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -76,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         btnThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ButtonPress(btnThree, buttons);
                 message[0] = btnThree.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -91,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         btnFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ButtonPress(btnFour, buttons);
                 message[0] = btnFour.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -106,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
         btnFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ButtonPress(btnFive, buttons);
                 message[0] = btnFive.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -121,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         btnSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ButtonPress(btnSix, buttons);
                 message[0] = btnSix.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -136,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
         btnSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ButtonPress(btnSeven, buttons);
                 message[0] = btnSeven.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -151,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         btnEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ButtonPress(btnEight, buttons);
                 message[0] = btnEight.getText().toString();
                 disableEditText(textCustomRequest);
             }
@@ -178,7 +189,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     private void ButtonTextChange(final Button button, final EditText editText){
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -188,6 +198,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void ButtonPress(Button button, Button[] buttons){
+        for (Button btn: buttons) {
+            if (btn.equals(button)){
+                btn.setBackgroundColor(Color.WHITE);
+                btn.setTextColor(Color.MAGENTA);
+            } else {
+                btn.setBackgroundColor(Color.MAGENTA);
+                btn.setTextColor(Color.WHITE);
+            }
+        }
     }
 
     private void RequestPermission() {
@@ -240,9 +262,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public void SendMessage(String message){
         SmsManager smsManager = SmsManager.getDefault();
-        String smsNumber = "15062605793";
+        String smsNumber = "";
         String smsText = message + "\n\n sent from the iWantAttention app";
         smsManager.sendTextMessage(smsNumber, null, smsText, null, null);
+    }
+    public void highlight(Button button){
+
     }
 }
 
