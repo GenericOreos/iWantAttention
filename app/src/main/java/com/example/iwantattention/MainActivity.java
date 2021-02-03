@@ -259,6 +259,8 @@ public class MainActivity extends AppCompatActivity {
         et.setFocusableInTouchMode(true);
         et.setEnabled(true);
         et.requestFocus();
+        et.setBackgroundColor(Color.WHITE);
+        et.setTextColor(Color.MAGENTA);
     }
     public void SendMessage(String message){
         SmsManager smsManager = SmsManager.getDefault();
