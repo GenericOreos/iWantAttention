@@ -4,11 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#EDD4F1">
+    android:background="#EDD4F1"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnNine"
+        android:layout_width="145dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="218dp"
+        android:layout_marginLeft="218dp"
+        android:layout_marginTop="533dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="127dp"
+        android:background="#C534DC"
+        android:text="Enter 10-Digit Phone #"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:textStyle="bold"
         android:id="@+id/txtWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,14 +36,13 @@
         android:layout_marginRight="119dp"
         android:layout_marginBottom="669dp"
         android:text="@string/welcome_to_the_i_want_attention_app"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:background="#C534DC"
-        android:textColor="#FFFFFF"
         android:id="@+id/btnThree"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -36,15 +52,15 @@
         android:layout_marginEnd="208dp"
         android:layout_marginRight="208dp"
         android:layout_marginBottom="406dp"
+        android:background="#C534DC"
         android:text="@string/bring_me_snacks"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="#FFFFFF"
-        android:background="#C534DC"
         android:id="@+id/btnFive"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -54,15 +70,15 @@
         android:layout_marginEnd="208dp"
         android:layout_marginRight="208dp"
         android:layout_marginBottom="306dp"
+        android:background="#C534DC"
         android:text="@string/bring_me_terry"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="#FFFFFF"
-        android:background="#C534DC"
         android:id="@+id/btnSix"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -72,15 +88,15 @@
         android:layout_marginEnd="43dp"
         android:layout_marginRight="43dp"
         android:layout_marginBottom="306dp"
+        android:background="#C534DC"
         android:text="@string/bring_me_princess"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="#FFFFFF"
-        android:background="#C534DC"
         android:id="@+id/btnFour"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -90,15 +106,15 @@
         android:layout_marginEnd="43dp"
         android:layout_marginRight="43dp"
         android:layout_marginBottom="406dp"
+        android:background="#C534DC"
         android:text="@string/i_m_thirsty"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="#FFFFFF"
-        android:background="#C534DC"
         android:id="@+id/btnOne"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -108,15 +124,15 @@
         android:layout_marginEnd="215dp"
         android:layout_marginRight="215dp"
         android:layout_marginBottom="505dp"
+        android:background="#C534DC"
         android:text="@string/i_want_attention"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="#FFFFFF"
-        android:background="#C534DC"
         android:id="@+id/btnTwo"
         android:layout_width="150dp"
         android:layout_height="75dp"
@@ -126,33 +142,33 @@
         android:layout_marginEnd="43dp"
         android:layout_marginRight="43dp"
         android:layout_marginBottom="502dp"
+        android:background="#C534DC"
         android:text="@string/i_want_snuggles"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="#FFFFFF"
-        android:background="#C534DC"
         android:id="@+id/btnSend"
         android:layout_width="316dp"
         android:layout_height="74dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginLeft="53dp"
-        android:layout_marginTop="556dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="628dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="29dp"
+        android:background="#C534DC"
         android:text="@string/send"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="#FFFFFF"
-        android:background="#C534DC"
         android:id="@+id/btnSeven"
         android:layout_width="145dp"
         android:layout_height="72dp"
@@ -162,15 +178,15 @@
         android:layout_marginEnd="213dp"
         android:layout_marginRight="213dp"
         android:layout_marginBottom="216dp"
+        android:background="#C534DC"
         android:text="Tuck In"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="#FFFFFF"
-        android:background="#C534DC"
         android:id="@+id/btnEight"
         android:layout_width="145dp"
         android:layout_height="72dp"
@@ -180,16 +196,15 @@
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
         android:layout_marginBottom="216dp"
+        android:background="#C534DC"
         android:text="Custom Request"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:textColor="#FFFFFF"
-        android:background="#C534DC"
-        android:windowSoftInputMode="stateVisible"
         android:id="@+id/txtCustomRequest"
         android:layout_width="284dp"
         android:layout_height="47dp"
@@ -199,10 +214,30 @@
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
         android:layout_marginBottom="599dp"
+        android:background="#C534DC"
         android:ems="10"
+        android:textColor="#FFFFFF"
+        android:windowSoftInputMode="stateVisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPhone"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="543dp"
+        android:layout_marginEnd="199dp"
+        android:layout_marginRight="199dp"
+        android:layout_marginBottom="125dp"
+        android:text="Enter Recipient's Phone Number -->"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

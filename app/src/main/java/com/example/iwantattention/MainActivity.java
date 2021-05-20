@@ -1,4 +1,4 @@
-package com.example.iwantattention;
+  package com.example.iwantattention;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,14 +11,16 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
+import android.renderscript.ScriptGroup;
+import android.text.InputType;
 import android.view.WindowManager;
 import android.widget.Button;
 import com.google.android.material.snackbar.Snackbar;
 import android.telephony.SmsManager;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+
+  public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,168 +36,120 @@ public class MainActivity extends AppCompatActivity {
         final Button btnSix = findViewById(R.id.btnSix);
         final Button btnSeven = findViewById(R.id.btnSeven);
         final Button btnEight = findViewById(R.id.btnEight);
+        final Button btnNine = findViewById(R.id.btnNine);
         final Button btnSend = findViewById(R.id.btnSend);
         btnSend.setBackgroundColor(Color.MAGENTA);
         //string "message" will be the selected button as a string and will be sent in a message
         //starts blank, and once a button is pushed, the message will be updated
         final String[] message = {""};
-        final Button[] buttons = {btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight};
+        final Button[] buttons = {btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine};
         for (Button btn: buttons) {
             btn.setBackgroundColor(Color.MAGENTA);
         }
         //when a button is pressed, it changes colour to yellow,
         //and the message string matches the button text
-        btnOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonPress(btnOne, buttons);
-                message[0] = btnOne.getText().toString();
-                disableEditText(textCustomRequest);
-            }
+        btnOne.setOnClickListener(v -> {
+            ButtonPress(btnOne, buttons);
+            message[0] = btnOne.getText().toString();
+            disableEditText(textCustomRequest);
         });
-        btnOne.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                enableEditText(textCustomRequest);
-                ButtonTextChange(btnOne, textCustomRequest);
-                getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
-                return true;
-            }
+        btnOne.setOnLongClickListener(v -> {
+            enableEditText(textCustomRequest, btnOne);
+            ButtonTextChange(btnOne, textCustomRequest);
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+            return true;
         });
-        btnTwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonPress(btnTwo, buttons);
-                message[0] = btnTwo.getText().toString();
-                disableEditText(textCustomRequest);
-            }
+        btnTwo.setOnClickListener(v -> {
+            ButtonPress(btnTwo, buttons);
+            message[0] = btnTwo.getText().toString();
+            disableEditText(textCustomRequest);
         });
-        btnTwo.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                enableEditText(textCustomRequest);
-                ButtonTextChange(btnTwo, textCustomRequest);
-                return true;
-            }
+        btnTwo.setOnLongClickListener(v -> {
+            enableEditText(textCustomRequest, btnTwo);
+            ButtonTextChange(btnTwo, textCustomRequest);
+            return true;
         });
-        btnThree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonPress(btnThree, buttons);
-                message[0] = btnThree.getText().toString();
-                disableEditText(textCustomRequest);
-            }
+        btnThree.setOnClickListener(v -> {
+            ButtonPress(btnThree, buttons);
+            message[0] = btnThree.getText().toString();
+            disableEditText(textCustomRequest);
         });
-        btnThree.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                enableEditText(textCustomRequest);
-                ButtonTextChange(btnThree, textCustomRequest);
-                return true;
-            }
+        btnThree.setOnLongClickListener(v -> {
+            enableEditText(textCustomRequest, btnThree);
+            ButtonTextChange(btnThree, textCustomRequest);
+            return true;
         });
-        btnFour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonPress(btnFour, buttons);
-                message[0] = btnFour.getText().toString();
-                disableEditText(textCustomRequest);
-            }
+        btnFour.setOnClickListener(v -> {
+            ButtonPress(btnFour, buttons);
+            message[0] = btnFour.getText().toString();
+            disableEditText(textCustomRequest);
         });
-        btnFour.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                enableEditText(textCustomRequest);
-                ButtonTextChange(btnFour, textCustomRequest);
-                return true;
-            }
+        btnFour.setOnLongClickListener(v -> {
+            enableEditText(textCustomRequest, btnFour);
+            ButtonTextChange(btnFour, textCustomRequest);
+            return true;
         });
-        btnFive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonPress(btnFive, buttons);
-                message[0] = btnFive.getText().toString();
-                disableEditText(textCustomRequest);
-            }
+        btnFive.setOnClickListener(v -> {
+            ButtonPress(btnFive, buttons);
+            message[0] = btnFive.getText().toString();
+            disableEditText(textCustomRequest);
         });
-        btnFive.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                enableEditText(textCustomRequest);
-                ButtonTextChange(btnFive, textCustomRequest);
-                return true;
-            }
+        btnFive.setOnLongClickListener(v -> {
+            enableEditText(textCustomRequest, btnFive);
+            ButtonTextChange(btnFive, textCustomRequest);
+            return true;
         });
-        btnSix.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonPress(btnSix, buttons);
-                message[0] = btnSix.getText().toString();
-                disableEditText(textCustomRequest);
-            }
+        btnSix.setOnClickListener(v -> {
+            ButtonPress(btnSix, buttons);
+            message[0] = btnSix.getText().toString();
+            disableEditText(textCustomRequest);
         });
-        btnSix.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                enableEditText(textCustomRequest);
-                ButtonTextChange(btnSix, textCustomRequest);
-                return true;
-            }
+        btnSix.setOnLongClickListener(v -> {
+            enableEditText(textCustomRequest, btnSix);
+            ButtonTextChange(btnSix, textCustomRequest);
+            return true;
         });
-        btnSeven.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ButtonPress(btnSeven, buttons);
-                message[0] = btnSeven.getText().toString();
-                disableEditText(textCustomRequest);
-            }
+        btnSeven.setOnClickListener(view -> {
+            ButtonPress(btnSeven, buttons);
+            message[0] = btnSeven.getText().toString();
+            disableEditText(textCustomRequest);
         });
-        btnSeven.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                enableEditText(textCustomRequest);
-                ButtonTextChange(btnSeven, textCustomRequest);
-                return true;
-            }
+        btnSeven.setOnLongClickListener(v -> {
+            enableEditText(textCustomRequest, btnSeven);
+            ButtonTextChange(btnSeven, textCustomRequest);
+            return true;
         });
-        btnEight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ButtonPress(btnEight, buttons);
-                message[0] = btnEight.getText().toString();
-                disableEditText(textCustomRequest);
-            }
+        btnEight.setOnClickListener(view -> {
+            ButtonPress(btnEight, buttons);
+            message[0] = btnEight.getText().toString();
+            disableEditText(textCustomRequest);
         });
-        btnEight.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                enableEditText(textCustomRequest);
-                ButtonTextChange(btnEight, textCustomRequest);
-                return true;
-            }
+        btnEight.setOnLongClickListener(v -> {
+            enableEditText(textCustomRequest, btnEight);
+            ButtonTextChange(btnEight, textCustomRequest);
+            return true;
+        });
+        btnNine.setOnLongClickListener(v ->{
+            enableEditText(textCustomRequest, btnNine);
+            ButtonTextChange(btnNine, textCustomRequest);
+            return true;
         });
 
-        btnSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String customRequest = textCustomRequest.getText().toString();
-                String msg = message[0];
-                if(msg == ""){
-                    msg = customRequest;
-                }
-                SendMessage(msg);
-                ShowNotification("Message sent!");
+        btnSend.setOnClickListener(v -> {
+            String customRequest = textCustomRequest.getText().toString();
+            String msg = message[0];
+            if(msg == ""){
+                msg = customRequest;
             }
+            SendMessage(msg, btnNine);
+            ShowNotification("Message sent!");
         });
     }
 
     private void ButtonTextChange(final Button button, final EditText editText){
-        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                if(!hasFocus){
-                    button.setText(editText.getText().toString());
-                }
+        editText.setOnFocusChangeListener((view, hasFocus) -> {
+            if(!hasFocus){
+                button.setText(editText.getText().toString());
             }
         });
     }
@@ -212,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void RequestPermission() {
+    public void RequestPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
                 if (ActivityCompat.shouldShowRequestPermissionRationale(this,
@@ -255,21 +209,29 @@ public class MainActivity extends AppCompatActivity {
         et.setText("");
         et.setBackgroundColor(Color.TRANSPARENT);
     }
-    public void enableEditText(EditText et){
+    public void enableEditText(EditText et, Button btn){
         et.setFocusableInTouchMode(true);
         et.setEnabled(true);
         et.requestFocus();
         et.setBackgroundColor(Color.WHITE);
         et.setTextColor(Color.MAGENTA);
+        String btnText = btn.getText().toString();
+        if(btnText.equals("Enter 10-Digit Phone #") || btnText.matches("^[0][1-9]\\d{9}$|^[1-9]\\d{9}$")){
+            et.setInputType(InputType.TYPE_CLASS_PHONE);
+        } else {
+            et.setInputType(InputType.TYPE_CLASS_TEXT);
+        }
     }
-    public void SendMessage(String message){
+    public void SendMessage(String message, Button btn){
+        String smsNumber = GetPhoneNumber(btn);
         SmsManager smsManager = SmsManager.getDefault();
-        String smsNumber = "";
         String smsText = message + "\n\n sent from the iWantAttention app";
         smsManager.sendTextMessage(smsNumber, null, smsText, null, null);
     }
-    public void highlight(Button button){
 
+    public String GetPhoneNumber(Button btn){
+        String num = btn.getText().toString();
+        return num;
     }
 }
 
