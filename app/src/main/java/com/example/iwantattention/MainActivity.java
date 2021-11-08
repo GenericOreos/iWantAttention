@@ -45,7 +45,7 @@ import android.widget.EditText;
         for (Button btn: buttons) {
             btn.setBackgroundColor(Color.MAGENTA);
         }
-        //when a button is pressed, it changes colour to yellow,
+        //when a button is pressed, it changes colour to white,
         //and the message string matches the button text
         btnOne.setOnClickListener(v -> {
             ButtonPress(btnOne, buttons);
@@ -140,6 +140,7 @@ import android.widget.EditText;
             if(msg == ""){
                 msg = customRequest;
             }
+
             SendMessage(msg, btnNine);
             ShowNotification("Message sent!");
         });
