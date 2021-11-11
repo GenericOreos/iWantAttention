@@ -140,9 +140,7 @@ import android.widget.EditText;
             if(msg == ""){
                 msg = customRequest;
             }
-
             SendMessage(msg, btnNine);
-            ShowNotification("Message sent!");
         });
     }
 
@@ -224,9 +222,14 @@ import android.widget.EditText;
     }
     public void SendMessage(String message, Button btn){
         String smsNumber = GetPhoneNumber(btn);
-        SmsManager smsManager = SmsManager.getDefault();
-        String smsText = message + "\n\n sent from the iWantAttention app";
-        smsManager.sendTextMessage(smsNumber, null, smsText, null, null);
+        if(smsNumber.matches("^[0][1-9]\\d{9}$|^[1-9]\\d{9}$")){
+            SmsManager smsManager = SmsManager.getDefault();
+            String smsText = message + "\n\n sent from the iWantAttention app";
+            smsManager.sendTextMessage(smsNumber, null, smsText, null, null);
+            ShowNotification("Message sent!");
+        } else {
+            ShowNotification("Enter a 10 digit phone number!");
+        }
     }
 
     public String GetPhoneNumber(Button btn){
